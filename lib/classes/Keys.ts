@@ -1,14 +1,19 @@
 import { generateKeyPairSync, KeyObject, randomBytes } from 'crypto';
 import { PrivateKey } from '../structs';
 
-export default class Keys {
-  /**
-   * A map storing all private keys generated in memory, values are keyed by their ID.
-   */
-  public store: Map<string, PrivateKey>;
+/**
+ * **INTERNAL** Constructor is not meant to be called externally.
+ * @class
+ * @classdesc This class extends Map, any functions on this class will store the result in the Map that this class extends for easy lookup later.
+ */
+export default class Keys extends Map {
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+  constructor() {
+    super();
+  }
 
   /**
-   * Creates a new private key.
+   * Creates a new private key. Resulting private key can be retrieved later by using `Keys.get('keyID');`.
    * @param keyType The type of key to create. Should be one of the following: RSA, DSA, EC, ED25519, or ED448.
    * @param data Can be omitted for ED25519 & ED448 keys, the other types require some elements.
    * @param data.keyID An optional parameter for the key ID, this is the key for the `Keys.store` map, if not provided it is a randomly generated hexadecimal string.
@@ -17,7 +22,11 @@ export default class Keys {
    * @param data.namedCurve Required for EC keys, recommended and most used curve is `prime256-v1`.
    * @example Keys.createPrivateKey('ec', { namedCurve: 'prime256-v1' });
    */
-  public createPrivateKey(keyType: 'rsa' | 'dsa' | 'ec' | 'ed25519' | 'ed448', data?: { keyID: string, modulusLength?: number, divisorLength?: number, namedCurve?: string }): PrivateKey {
+  public createPrivateKey(keyType: 'rsa' | 'dsa' | 'ec' | 'ed25519' | 'ed448', data?: { keyID?: string, modulusLength?: number, divisorLength?: number, namedCurve?: string }): PrivateKey {
+    if (!data) {
+      // eslint-disable-next-line no-param-reassign
+      data = {};
+    }
     if (!keyType) {
       throw new TypeError('Key type is required.');
     }
@@ -80,7 +89,7 @@ export default class Keys {
       divisorLength: data.divisorLength,
       curve: data.namedCurve,
     });
-    this.store.set(keyID, newKey);
+    this.set(keyID, newKey);
     return newKey;
   }
 }
