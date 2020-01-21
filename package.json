@@ -1,0 +1,19 @@
+{
+  "name": "gocrypt",
+  "version": "1.0.0",
+  "description": "A cryptographic library using native Node.js crypto functions & Go binaries for an all-in-one package for everything crypto.",
+  "main": "lib/index.ts",
+  "repository": "https://gitlab.libraryofcode.org/engineering/gocrypt",
+  "author": "Library of Code sp-us | Faculty Marshals",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^13.1.8",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "typescript": "^3.7.5"
+  }
+}
