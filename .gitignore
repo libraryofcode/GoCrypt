@@ -5,3 +5,7 @@ package-lock.json
 
 # Packages
 node_modules
+
+# Dist & Build Directories
+dist/
+build/
