@@ -1,6 +1,11 @@
 import crypto from 'crypto';
 
 export default class PrivateKey {
+  /**
+   * The ID for this key, you can fetch this PrivateKey instance again either with the Keys.store map.
+   */
+  public readonly id: string;
+
   public readonly type: 'rsa' | 'rsa-pss' | 'dsa' | 'ec' | 'x25519' | 'x448' | 'ed25519' | 'ed448';
 
   public typeOID: '1.2.840.113549.1.1.1' | '1.2.840.113549.1.1.10' | '1.2.840.10040.4.1' | '1.2.840.10045.2.1' | '1.3.101.110' | '1.3.101.111' | '1.3.101.112' | '1.3.101.113';
@@ -32,8 +37,9 @@ export default class PrivateKey {
    * **INTERNAL** This constructor should only be called internally within the library, do not instantiate this class externally.
    * @param keyObject The key object from private key creation.
    */
-  constructor(keyObject: crypto.KeyObject, data: { modulusLength: number, divisorLength: number, curve: string }) {
+  constructor(keyObject: crypto.KeyObject, keyID: string, data: { modulusLength: number, divisorLength: number, curve: string }) {
     this.keyObject = keyObject;
+    this.id = keyID;
     this.type = keyObject.asymmetricKeyType;
     this.size = keyObject.asymmetricKeySize;
     this.setTypeOID();
