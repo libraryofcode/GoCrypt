@@ -1,0 +1,16 @@
+# Package Manager Log Files
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# Packages
+node_modules
+
+# Dist & Build Directories
+!dist/
+
+# Library 
+#lib/
+
+# Testing
+tests/
