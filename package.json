@@ -8,6 +8,9 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "ffi-napi": "^2.4.6",
+    "ref-napi": "^1.4.3",
+    "ref-struct-napi": "^1.1.0",
     "typescript": "^3.7.5"
   },
   "devDependencies": {
