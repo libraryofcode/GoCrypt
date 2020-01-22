@@ -9,3 +9,7 @@ node_modules
 # Dist & Build Directories
 dist/
 build/
+lib/build
+
+# Testing
+tests/
