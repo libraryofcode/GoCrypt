@@ -33,8 +33,8 @@ function checkRequirements(): { osCheck: boolean, goCheck: boolean } {
 If any check returns false, the thrown error will prevent the module from being required/imported.
 */
 const check = checkRequirements();
-if (!check.osCheck) throw new Error('GoCrypto is only supported on Linux operating systems at this time.');
-if (!check.goCheck) throw new Error('GoCrypto requires the Go programming language to be installed and available in path.');
+if (!check.osCheck) throw new Error('GoCrypt is only supported on Linux operating systems at this time.');
+if (!check.goCheck) throw new Error('GoCrypt requires the Go programming language to be installed and available in path.');
 export default {
   keys: new classes.Keys(),
 };
