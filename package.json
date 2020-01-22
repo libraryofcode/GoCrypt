@@ -1,6 +1,6 @@
 {
   "name": "gocrypt",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "A cryptographic library using native Node.js crypto functions & Go binaries for an all-in-one package for everything crypto.",
   "main": "dist/index.js",
   "scripts": {
