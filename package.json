@@ -1,10 +1,11 @@
 {
   "name": "gocrypt",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A cryptographic library using native Node.js crypto functions & Go binaries for an all-in-one package for everything crypto.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "prepublishOnly": "make remove && make rm_push && make pre_push",
+    "prepublishOnly": "make remove && make rm_push && make pre_push && tsc -p ./tsconfig.json",
     "postinstall": "make"
   },
   "repository": "https://gitlab.libraryofcode.org/engineering/gocrypt",
