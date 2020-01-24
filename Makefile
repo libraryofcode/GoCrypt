@@ -19,3 +19,5 @@ pre_push:
 
 rm_push:
 	-rm -rf dist/go
+
+stage: remove rm_push pre_push
