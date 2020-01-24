@@ -19,6 +19,7 @@
     "typescript": "^3.7.5"
   },
   "devDependencies": {
+    "@types/ffi-napi": "^2.4.1",
     "@types/node": "^13.1.8",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
