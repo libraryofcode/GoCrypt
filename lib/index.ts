@@ -5,9 +5,11 @@ import * as structs from './structs';
 import * as classes from './classes';
 
 /**
+ * **INTERNAL** This function is internal and not callable by external callers.
  * Checks system information and determines if the user can run GoCrypto.
  * Go must be installed on the machine, and said machine has to be Linux. GoCrypto is not supported
  * on any other operating system but Linux.
+ * @private
  */
 function checkRequirements(): { osCheck: boolean, goCheck: boolean } {
   const res = { osCheck: true, goCheck: true };
@@ -29,12 +31,16 @@ function checkRequirements(): { osCheck: boolean, goCheck: boolean } {
   return res;
 }
 
-/* Runs checks, throws errors if any of the checks return false.
-If any check returns false, the thrown error will prevent the module from being required/imported.
-*/
+/**
+ * Runs checks, throws errors if any of the checks return false.
+ * If any check returns false, the thrown error will prevent the module from being required/imported.
+ * @private
+ */
 const check = checkRequirements();
 if (!check.osCheck) throw new Error('GoCrypt is only supported on Linux operating systems at this time.');
 if (!check.goCheck) throw new Error('GoCrypt requires the Go programming language to be installed and available in path.');
-export default {
+
+module.exports = {
   keys: new classes.Keys(),
+  util: new classes.Util(),
 };
