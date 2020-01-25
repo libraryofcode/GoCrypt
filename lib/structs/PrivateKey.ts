@@ -36,6 +36,8 @@ export default class PrivateKey {
   /**
    * **INTERNAL** This constructor should only be called internally within the library, do not instantiate this class externally.
    * @param keyObject The key object from private key creation.
+   * @param keyID The ID for this private key.
+   * @param data Information relating to this private key.
    */
   constructor(keyObject: crypto.KeyObject, keyID: string, data: { modulusLength: number, divisorLength: number, curve: string }) {
     this.keyObject = keyObject;
