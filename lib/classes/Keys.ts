@@ -1,12 +1,13 @@
-import { generateKeyPairSync, KeyObject, randomBytes } from 'crypto';
+import { createPrivateKey, generateKeyPairSync, KeyObject, randomBytes } from 'crypto';
 import { PrivateKey } from '../structs';
+import { exec } from '../internals';
 
 /**
  * **INTERNAL** Constructor is not meant to be called externally.
  * @class
  * @classdesc This class extends Map, any functions on this class will store the result in the Map that this class extends for easy lookup later.
  */
-export default class Keys extends Map {
+export default class Keys extends Map<string, PrivateKey> {
   // eslint-disable-next-line @typescript-eslint/no-useless-constructor
   constructor() {
     super();
@@ -19,8 +20,8 @@ export default class Keys extends Map {
    * @param data.keyID An optional parameter for the key ID, this is the key for the `Keys.store` map, if not provided it is a randomly generated hexadecimal string.
    * @param data.modulusLength Required for RSA & DSA keys, recommended lengths in bits for this value are 1024, 2048 (standard) or 4096. Anything really over 4096 is overkill.
    * @param data.divisorLength Required for DSA keys.
-   * @param data.namedCurve Required for EC keys, recommended and most used curve is `prime256-v1`.
-   * @example Keys.createPrivateKey('ec', { namedCurve: 'prime256-v1' });
+   * @param data.namedCurve Required for EC keys, recommended and most used curve is `prime256v1`.
+   * @example Keys.createPrivateKey('ec', { namedCurve: 'prime256v1' });
    */
   public createPrivateKey(keyType: 'rsa' | 'dsa' | 'ec' | 'ed25519' | 'ed448', data?: { keyID?: string, modulusLength?: number, divisorLength?: number, namedCurve?: string }): PrivateKey {
     if (!data) {
@@ -81,6 +82,7 @@ export default class Keys extends Map {
     } else if (keyType === 'ed448') {
       // @ts-ignore
       const gen = generateKeyPairSync(keyType, {});
+      privateKey = gen.privateKey;
     } else {
       throw new TypeError('Invalid key type provided.');
     }
@@ -89,6 +91,48 @@ export default class Keys extends Map {
       divisorLength: data.divisorLength,
       curve: data.namedCurve,
     });
+    this.set(keyID, newKey);
+    return newKey;
+  }
+
+  /**
+   * Imports an already existing private key. This function only supports RSA & ECC keys at the moment. Resulting private key can be retrieved later by using `Keys.get('keyID');`
+   * @param key PEM/DER encoded private key, if the encoding is DER, you should pass `data.format` in the second argument with the value of 'der', as well as `data.type` with the value of the key headers.
+   * @param data Optional information about private key format & type, required if the key is in DER encoding.
+   * @param data.format Required to specify 'der' as this parameter if the key passed is in DER encoding.
+   * @param data.type Required to specify the headers type if the key passed is in DER encoding.
+   */
+  public async importPrivateKey(key: string, data?: { format?: 'pem' | 'der', type?: 'pkcs1' | 'sec1', passphrase?: string }): Promise<PrivateKey> {
+    const params: { key: string, format?: 'pem' | 'der', type?: 'pkcs1' | 'sec1', passphrase?: string } = { key };
+    let checkKey: string;
+    if (data) {
+      if (data.format) {
+        params.format = data.format;
+      }
+      if (data.format === 'der' && data.type) {
+        params.type = data.type;
+      } else if (data.format && !data.type) {
+        throw new Error('Key encode type is required if the format of the key is \'der\'.');
+      }
+      if (data.passphrase) {
+        params.passphrase = data.passphrase;
+      }
+    }
+    const keyObject = createPrivateKey(params);
+    if (data && data.format === 'der') {
+      checkKey = keyObject.export({ type: params.type, format: 'pem' }).toString();
+    } else {
+      checkKey = key;
+    }
+    const keyID = randomBytes(5).toString('hex');
+    let newKey: PrivateKey;
+    const result: { Type: string, Curve: string, Modulus: number } = await exec('pkinfo', Buffer.from(checkKey, 'utf8').toString('hex'));
+    if (result.Type === 'RSA') {
+      newKey = new PrivateKey(keyObject, keyID, { modulusLength: result.Modulus, divisorLength: undefined, curve: undefined });
+    }
+    if (result.Type === 'EC') {
+      newKey = new PrivateKey(keyObject, keyID, { modulusLength: undefined, divisorLength: undefined, curve: result.Curve });
+    }
     this.set(keyID, newKey);
     return newKey;
   }
