@@ -1,15 +1,22 @@
 # Usage
 # make	# Go binaries, all archs are supported.
-go_files := $(wildcard dist/go/*.go)
+go_files_so := $(wildcard dist/go/so/*.go)
+go_files_exe := $(wildcard dist/go/exe/*.go)
 
 all: build_go
 
 build_go:
+	# SO
 	@-mkdir dist/build
-	go test ${go_files}
-	go build -v -o dist/build/func.so -ldflags="-s -w" -buildmode=c-shared ${go_files}
+	go test ${go_files_so}
+	go build -v -o dist/build/func.so -ldflags="-s -w" -buildmode=c-shared ${go_files_so}
 	@chmod u+x dist/build/func.so
 	@file dist/build/func.so
+	# EXE
+	go test ${go_files_exe}
+	go build -v -o dist/build/cmd -ldflags="-s -w" ${go_files_exe}
+	@chmod u+x dist/build/cmd
+	@file dist/build/cmd
 
 remove:
 	-rm -rf dist/build
