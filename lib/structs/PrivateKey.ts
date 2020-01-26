@@ -27,6 +27,8 @@ export default class PrivateKey {
 
   /**
    * The elliptic curve for EC keys, and only set on EC keys, will be `undefined` on other types. Run `openssl ecparam -list_curves` to get a list of all curves supported by your machine.
+   * **WARNING** If you imported a private key, Go currently only returns *vague* responses for the curve. This value will be set to the following if the key is EC & you imported the EC key:
+   * P-224, P-256, P-384, or P-512.
    */
 
   public readonly curve: string;
