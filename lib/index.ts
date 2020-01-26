@@ -3,6 +3,7 @@ import os from 'os';
 import { execSync } from 'child_process';
 import * as structs from './structs';
 import * as classes from './classes';
+import * as internals from './internals';
 
 /**
  * **INTERNAL** This function is internal and not callable by external callers.
@@ -48,5 +49,9 @@ module.exports = {
    * Internal objects, variables, and functions.
    * @private
    */
-  internals: classes.Internals,
+  internals: {
+    exec: internals.exec,
+    GoString: internals.GoString,
+    GoStringStruct: internals.GoStringStruct,
+  },
 };
