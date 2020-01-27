@@ -12,6 +12,18 @@
   "author": "Library of Code sp-us | Faculty Marshals",
   "license": "MIT",
   "private": false,
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "repositoryUrl": "git@gitlab.libraryofcode.org:engineering/gocrypt.git",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  },
   "dependencies": {
     "ffi-napi": "^2.4.6",
     "ref-napi": "^1.4.3",
@@ -19,6 +31,8 @@
     "typescript": "^3.7.5"
   },
   "devDependencies": {
+    "@semantic-release/git": "^8.0.0",
+    "@semantic-release/gitlab": "^4.1.0",
     "@types/ffi-napi": "^2.4.1",
     "@types/node": "^13.1.8",
     "@typescript-eslint/eslint-plugin": "^2.17.0",

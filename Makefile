@@ -5,6 +5,10 @@ go_files_exe := $(wildcard dist/go/exe/*.go)
 
 all: build_go
 
+test:
+	go test ${go_files_so}
+	go test ${go_files_exe}
+
 build_go:
 	# SO
 	@-mkdir dist/build

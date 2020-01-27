@@ -1,0 +1,22 @@
+stages:
+  - test
+  - build
+  - deploy
+
+before_script:
+  - yarn install
+
+go_test:
+  stage: test
+  script:
+    - make test
+
+build:
+  stage: build
+  script:
+    - make remove && make rm_push && make pre_push && tsc -p ./tsconfig.json
+
+release:
+  stage: build
+  script:
+    - npx semantic-release
