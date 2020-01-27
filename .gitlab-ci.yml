@@ -19,6 +19,6 @@ build:
     - make 
 
 release:
-  stage: build
+  stage: deploy
   script:
     - npx semantic-release
