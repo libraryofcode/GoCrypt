@@ -1,6 +1,6 @@
 {
   "name": "gocrypt",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "A cryptographic library using native Node.js crypto functions & Go binaries for an all-in-one package for everything crypto.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,8 +16,27 @@
     "url": "https://gitlab.libraryofcode.org/engineering/gocrypt/issues",
     "email": "marshals@libraryofcode.org"
   },
-  "keywords": ["crypto", "x509", "ec", "ecc", "rsa", "dsa", "golang", "go", "csr", "openssl", "ssl", "tls", "certs", "certificates", "cryptography"],
-  "os" : [ "darwin", "linux" ],
+  "keywords": [
+    "crypto",
+    "x509",
+    "ec",
+    "ecc",
+    "rsa",
+    "dsa",
+    "golang",
+    "go",
+    "csr",
+    "openssl",
+    "ssl",
+    "tls",
+    "certs",
+    "certificates",
+    "cryptography"
+  ],
+  "os": [
+    "darwin",
+    "linux"
+  ],
   "release": {
     "branches": [
       "master"
