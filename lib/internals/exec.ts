@@ -1,5 +1,4 @@
 import childProcess from 'child_process';
-import { promisify } from 'util';
 
 class GoExecError extends Error {
   public goErr: string;
@@ -14,13 +13,12 @@ class GoExecError extends Error {
     this.goMsg = message;
   }
 }
-export default async function exec(command: string, params: string): Promise<any> {
-  const ex = promisify(childProcess.exec);
+export default function exec(command: string, args = [], stdin = ''): any {
   try {
-    const res = await ex(`${__dirname}/../build/cmd ${command} ${params}`);
-    return JSON.parse(res.stdout);
+    const res = childProcess.execSync(`${__dirname}/../build/cmd ${command} ${args.join(' ')}`, { input: stdin, encoding: 'utf8' });
+    return JSON.parse(res.toString());
   } catch (err) {
-    const { stdout } = err;
+    const stdout = err.stdout.toString();
     const responseError: { Err: string, Message: string } = JSON.parse(stdout);
     throw new GoExecError(responseError.Err, responseError.Message);
   }
