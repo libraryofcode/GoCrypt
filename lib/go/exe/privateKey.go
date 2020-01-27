@@ -10,12 +10,15 @@ import (
 	"fmt"
 )
 
-func PrivateKeyInfo(pemEncodedKey string) {
+// PrivateKeyInfo This is an executable command function for private key information used in classes/Keys#importPrivateKey();
+func PrivateKeyInfo() {
 	type Key struct {
 		Type    string
 		Curve   string
 		Modulus int
 	}
+	var pemEncodedKey string
+	fmt.Scanln(&pemEncodedKey)
 	bytes, err := hex.DecodeString(pemEncodedKey)
 	if err != nil {
 		HandleErrorFMT(err, "[GO] Could not decode hexadecimal argument to string.")
