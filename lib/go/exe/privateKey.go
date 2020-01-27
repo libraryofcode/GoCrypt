@@ -1,11 +1,10 @@
 package main
 
-
 import (
 	"crypto/x509"
+	"encoding/hex"
 	"encoding/json"
 	"encoding/pem"
-	"encoding/hex"
 	"errors"
 	"fmt"
 )

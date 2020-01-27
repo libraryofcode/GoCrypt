@@ -26,10 +26,10 @@ func HandleErrorFMT(err error, message string) {
 }
 
 func main() {
-	if (len(os.Args) < 1) {
+	if len(os.Args) < 1 {
 		HandleErrorFMT(errors.New("invalid command or command not found"), "[GO] Invalid command or command not found.")
 	}
-	if (os.Args[1] == "pkinfo") {
+	if os.Args[1] == "pkinfo" {
 		PrivateKeyInfo()
 	} else {
 		HandleErrorFMT(errors.New("invalid command or command not found"), "[GO] Invalid command or command not found.")
