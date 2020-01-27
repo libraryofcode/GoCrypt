@@ -102,7 +102,7 @@ export default class Keys extends Map<string, PrivateKey> {
    * @param data.format Required to specify 'der' as this parameter if the key passed is in DER encoding.
    * @param data.type Required to specify the headers type if the key passed is in DER encoding.
    */
-  public async importPrivateKey(key: string, data?: { format?: 'pem' | 'der', type?: 'pkcs1' | 'sec1', passphrase?: string }): Promise<PrivateKey> {
+  public importPrivateKey(key: string, data?: { format?: 'pem' | 'der', type?: 'pkcs1' | 'sec1', passphrase?: string }): PrivateKey {
     const params: { key: string, format?: 'pem' | 'der', type?: 'pkcs1' | 'sec1', passphrase?: string } = { key };
     let checkKey: string;
     if (data) {
@@ -126,7 +126,7 @@ export default class Keys extends Map<string, PrivateKey> {
     }
     const keyID = randomBytes(5).toString('hex');
     let newKey: PrivateKey;
-    const result: { Type: string, Curve: string, Modulus: number } = await exec('pkinfo', Buffer.from(checkKey, 'utf8').toString('hex'));
+    const result: { Type: string, Curve: string, Modulus: number } = exec('pkinfo', undefined, Buffer.from(checkKey, 'utf8').toString('hex'));
     if (result.Type === 'RSA') {
       newKey = new PrivateKey(keyObject, keyID, { modulusLength: result.Modulus, divisorLength: undefined, curve: undefined });
     }
