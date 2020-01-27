@@ -44,14 +44,4 @@ if (!check.goCheck) throw new Error('GoCrypt requires the Go programming languag
 module.exports = {
   keys: new classes.Keys(),
   util: new classes.Util(),
-  /**
-   * **INTERNAL** This object is not meant to be interfaced with externally.
-   * Internal objects, variables, and functions.
-   * @private
-   */
-  internals: {
-    exec: internals.exec,
-    GoString: internals.GoString,
-    GoStringStruct: internals.GoStringStruct,
-  },
 };
