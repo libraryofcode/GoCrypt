@@ -12,6 +12,12 @@
   "author": "Library of Code sp-us | Faculty Marshals",
   "license": "MIT",
   "private": false,
+  "bugs": {
+    "url": "https://gitlab.libraryofcode.org/engineering/gocrypt/issues",
+    "email": "marshals@libraryofcode.org"
+  },
+  "keywords": ["crypto", "x509", "ec", "ecc", "rsa", "dsa", "golang", "go", "csr", "openssl", "ssl", "tls", "certs", "certificates", "cryptography"],
+  "os" : [ "darwin", "linux" ],
   "release": {
     "branches": [
       "master"
