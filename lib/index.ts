@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import os from 'os';
 import { execSync } from 'child_process';
-import * as structs from './structs';
 import * as classes from './classes';
-import * as internals from './internals';
 
 /**
  * **INTERNAL** This function is internal and not callable by external callers.
