@@ -1,8 +1,6 @@
 import Struct from 'ref-struct-napi';
 
-const GoStringStruct = Struct({
+export default Struct({
   p: 'string',
   n: 'long',
 });
-
-export default GoStringStruct;
