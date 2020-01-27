@@ -4,7 +4,9 @@ stages:
   - deploy
 
 before_script:
-  - yarn install
+  - yarn install --ignore-scripts
+  - tsc -p ./tsconfig.json
+  - make stage
 
 go_test:
   stage: test
@@ -14,7 +16,7 @@ go_test:
 build:
   stage: build
   script:
-    - make remove && make rm_push && make pre_push && tsc -p ./tsconfig.json
+    - make 
 
 release:
   stage: build
