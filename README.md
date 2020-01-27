@@ -1,6 +1,8 @@
 # GoCrypt
 *by Library of Code sp-us | Faculty Marshals*
 
+[![pipeline status](https://gitlab.libraryofcode.org/engineering/gocrypt/badges/master/pipeline.svg)](https://gitlab.libraryofcode.org/engineering/gocrypt/commits/master) [![coverage report](https://gitlab.libraryofcode.org/engineering/gocrypt/badges/master/coverage.svg)](https://gitlab.libraryofcode.org/engineering/gocrypt/commits/master)
+
 `yarn add gocrypt` || `npm install gocrypt`
 
 **Module will only build Go binaries on Linux distros.**
