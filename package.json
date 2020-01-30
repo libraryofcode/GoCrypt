@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublishOnly": "make remove && make rm_push && make pre_push && tsc -p ./tsconfig.json",
+    "prepublishOnly": "make remove && make rm_push && make pre_push && tsc -p ./lib/tsconfig.json",
     "postinstall": "make"
   },
   "repository": "https://gitlab.libraryofcode.org/engineering/gocrypt",
