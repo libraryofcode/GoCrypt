@@ -6,14 +6,22 @@ export interface CertificateRequestData {
   subject: {
     /**
      * Country code for said country, a list can be found here: https://clients.hostingireland.ie/knowledgebase/2042/2-letter-country-codes-for-CSR-generation.html
-     * The code should be only two characters in length.
+     * The code should be only two characters in length. You can have multiple country codes, but you should only have one.
      * @example 'US'
      */
     country?: string[],
+    /**
+     * The name of the organization, frequently used in OV validated certificates. You can have multiple organization names, but you should only have one.
+     * @example 'Library of Code sp-us'
+     */
     organization?: string[],
     organizationalUnit?: string[],
     streetAddress?: string[],
     postalCode?: string[]
+    /**
+     * The common name for the certificate. For server certificates this should be your domain name.
+     * @example libraryofcode.org
+     */
     commonName: string,
   },
   san?: {
