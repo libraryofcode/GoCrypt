@@ -1,4 +1,5 @@
 import ffi from 'ffi-napi';
+import { platform } from 'os';
 
 /**
  * A general utilities library.
@@ -15,10 +16,12 @@ export default class Util {
    * @internal
    */
   constructor() {
-    this.goLib = ffi.Library(`${__dirname}/../build/func.so`, {
-      RandomInt: ['char *', ['int']],
-      FreeString: ['void', ['void *']],
-    });
+    if (platform() === 'linux') {
+      this.goLib = ffi.Library(`${__dirname}/../build/func.so`, {
+        RandomInt: ['char *', ['int']],
+        FreeString: ['void', ['void *']],
+      });
+    }
   }
 
   /**

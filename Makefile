@@ -26,20 +26,14 @@ build_go:
 	@file build/cmd
 
 build_go_windows_x64:
-	# SO | Windows x64
-	GOOS=windows go build -v -o build/windows-x64/func.so -ldflags="-s -w" -buildmode=c-shared ${go_files_so}
-	@chmod u+x build/windows-x64/func.so
-	@file build/windows-x64/func.so
+	@-mkdir build
 	# EXE | Windows x64
 	GOOS=windows go build -v -o build/windows-x64/cmd -ldflags="-s -w" ${go_files_exe}
 	@chmod u+x build/windows-x64/cmd
 	@file build/windows-x64/cmd
 
 build_go_mac_x64:
-	# SO | Mac x64
-	GOOS=darwin go build -v -o build/mac-x64/func.so -ldflags="-s -w" -buildmode=c-shared ${go_files_so}
-	@chmod u+x build/mac-x64/func.so
-	@file build/mac-x64/func.so
+	@-mkdir build
 	# EXE | Mac x64
 	GOOS=darwin go build -v -o build/mac-x64/cmd -ldflags="-s -w" ${go_files_exe}
 	@chmod u+x build/mac-x64/cmd
