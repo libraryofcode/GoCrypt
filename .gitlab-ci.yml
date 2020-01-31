@@ -3,22 +3,73 @@ stages:
   - build
   - deploy
 
-before_script:
-  - yarn install --ignore-scripts
-  - tsc -p ./tsconfig.json
-  - make stage
-
 go_test:
+  before_script:
+    - yarn install --ignore-scripts
+    - tsc -p ./lib/tsconfig.json
+    - make stage
   stage: test
   script:
     - make test
 
-build:
+build_linux:
   only:
     - master@engineering/gocrypt
   stage: build
   script:
     - make 
+
+build_windows:
+  only:
+    - master@engineering/gocrypt
+  stage: build
+  script:
+    - make build_go_windows_x64
+
+build_mac:
+  only:
+    - master@engineering/gocrypt
+  stage: build
+  script:
+    - make build_go_mac_x64
+
+build_docs:
+  only:
+    - master@engineering/gocrypt
+  stage: build
+  script:
+    - make build_doc
+
+release_bin_linux:
+  only:
+    - master@engineering/gocrypt
+  stage: deploy
+  script:
+    - scp dist/build/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/linux/amd64/gocrypt-func.so
+    - scp dist/build/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/linux/amd64/gocrypt-cmd
+
+release_bin_mac:
+  only:
+    - master@engineering/gocrypt
+  stage: deploy
+  script:
+    - scp dist/build/mac-x64/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/darwin/amd64/gocrypt-func.so
+    - scp dist/build/mac-x64/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/darwin/amd64/gocrypt-cmd
+
+release_bin_windows:
+  only:
+    - master@engineering/gocrypt
+  stage: deploy
+  script:
+    - scp dist/build/windows-x64/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/windows/amd64/gocrypt-func.so
+    - scp dist/build/windows-x64/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/windows/amd64/gocrypt-cmd
+
+release_docs:
+  only: 
+    - master@engineering/gocrypt
+  stage: deploy
+  script:
+    - cp -r doc/* /var/www/gocryptdoc
 
 release:
   only:

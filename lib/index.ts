@@ -9,6 +9,7 @@ import * as classes from './classes';
  * Go must be installed on the machine, and said machine has to be Linux. GoCrypto is not supported
  * on any other operating system but Linux.
  * @private
+ * @internal
  */
 function checkRequirements(): { osCheck: boolean, goCheck: boolean } {
   const res = { osCheck: true, goCheck: true };
@@ -34,12 +35,14 @@ function checkRequirements(): { osCheck: boolean, goCheck: boolean } {
  * Runs checks, throws errors if any of the checks return false.
  * If any check returns false, the thrown error will prevent the module from being required/imported.
  * @private
+ * @internal
  */
 const check = checkRequirements();
 if (!check.osCheck) throw new Error('GoCrypt is only supported on Linux operating systems at this time.');
 if (!check.goCheck) throw new Error('GoCrypt requires the Go programming language to be installed and available in path.');
 
-module.exports = {
+export default {
   keys: new classes.Keys(),
+  certificates: new classes.Certificates(),
   util: new classes.Util(),
 };

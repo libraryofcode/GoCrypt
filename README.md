@@ -5,7 +5,7 @@
 
 `yarn add gocrypt` || `npm install gocrypt`
 
-**Module will only build Go binaries on Linux distros.**
+**This module fetches bindings and executables from the Library of Code sp-us [distribution center](https://bin.libraryofcode.org) upon installation. The script will automatically determine your operating system and install related bindings.**
 
 GoCrypt is a package written in TypeScript for advanced crytography functions and utilities using
 native Node.js crypto functions & via Go bindings.
@@ -16,8 +16,18 @@ GoCrypt's mission is to offer all the crypto-related functions and APIs any Node
 ## Installation Requirements
 
 - Node 10+ is heavily recommended for installation. 
-- Go 1.13+ is required for installation. (https://golang.org/doc/install)
-- Makefile is required for installation, (i.e. the make command that's only available on Linux, which is why this module is preferred to be used for Linux only.)
+- AMD_
+- ~~Go 1.13+ is required for installation. (https://golang.org/doc/install)~~
+- ~~Makefile is required for installation, (i.e. the make command that's only available on Linux, which is why this module is preferred to be used for Linux only.)~~
+- **GoCrypt now supports Windows and Mac operating systems, AMD_x64 CPU architecture is the only architecture supported at the moment!!**
+
+## Gotcha(s)
+
+GoCrypt is using ES6, and TypeScript is gonna spit out some whack stuff when it compiles. If you're not using ES6 when you import GoCrypt all of the function libaries are going to be under a property called `default`. So if you're using require, then require GoCrypt like this:
+```js
+const gocrypt = require('gocrypt').default;
+```
+
 
 ## Support Resources
 You can contact Library of Code through the methods listed below, if you have an issue with the repository, feel free to join the Discord server to ask for help or open an issue on our [repository](https://gitlab.libraryofcode.org/engineering/gocrypt).

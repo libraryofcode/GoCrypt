@@ -31,6 +31,8 @@ func main() {
 	}
 	if os.Args[1] == "pkinfo" {
 		PrivateKeyInfo()
+	} else if os.Args[1] == "csr" {
+		CSR()
 	} else {
 		HandleErrorFMT(errors.New("invalid command or command not found"), "[GO] Invalid command or command not found.")
 	}

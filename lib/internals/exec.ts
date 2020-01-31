@@ -13,6 +13,9 @@ class GoExecError extends Error {
     this.goMsg = message;
   }
 }
+/**
+ * @internal
+ */
 export default function exec(command: string, args = [], stdin = ''): any {
   try {
     const res = childProcess.execSync(`${__dirname}/../build/cmd ${command} ${args.join(' ')}`, { input: stdin, encoding: 'utf8' });
