@@ -1,3 +1,10 @@
+## [1.3.1](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.0...v1.3.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* ci & build script ([57c526c](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/57c526c4dc4e0768ecb0cfcd74853bfdcf9da9f8))
+
 # [1.3.0](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.2.6...v1.3.0) (2020-01-31)
 
 
