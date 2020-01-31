@@ -11,7 +11,7 @@ async function dwl(type) {
       url: `https://bin.libraryofcode.org/${type}/amd64/gocrypt-func.so`,
       responseType: 'arraybuffer',
     });
-    fs.writeFileSync(`${__dirname}../dist/build/func.so`, so.data, { mode });
+    fs.writeFileSync(`${__dirname}/../dist/build/func.so`, so.data, { mode });
   } catch (error) {
     console.log('Could not fetch DLL/SO bindings, some functions that require these may not work.');
   }
@@ -21,7 +21,7 @@ async function dwl(type) {
     url: `https://bin.libraryofcode.org/${type}/amd64/gocrypt-cmd`,
     responseType: 'arraybuffer',
   });
-  fs.writeFileSync(`${__dirname}../dist/build/cmd`, exe.data, { mode });
+  fs.writeFileSync(`${__dirname}/../dist/build/cmd`, exe.data, { mode });
 }
 
 async function main() {
