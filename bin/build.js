@@ -5,6 +5,7 @@ const os = require('os');
 
 const mode = 0o750;
 async function dwl(type) {
+  fs.mkdirSync(`${__dirname}/../dist/build`, { mode });
   try {
     const so = await axios.default({
       method: 'get',
