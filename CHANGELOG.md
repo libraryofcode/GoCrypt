@@ -1,3 +1,12 @@
+# [1.3.0](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.2.6...v1.3.0) (2020-01-31)
+
+
+### Features
+
+* Build script ([c81f3c5](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/c81f3c5f51490339c5b417d928a39d6e3ee04f1a))
+* Windows & Mac x64 support ([e2c5c80](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/e2c5c80c46f17d03ac7a800fa529547ac7fcabd5))
+* **x509:** Add support for creation of Certificate Signing Requests ([49e5d62](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/49e5d629728b649103b1ab067cc0bd27f2831a3d))
+
 ## [1.2.6](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.2.5...v1.2.6) (2020-01-27)
 
 
