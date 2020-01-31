@@ -80,4 +80,5 @@ release:
     - master@engineering/gocrypt
   stage: deploy
   script:
+    - cp -r lib/go dist/go
     - npx semantic-release
