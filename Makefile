@@ -1,7 +1,7 @@
 # Usage
 # make	# Go binaries, all archs are supported.
-go_files_so := $(wildcard dist/go/so/*.go)
-go_files_exe := $(wildcard dist/go/exe/*.go)
+go_files_so := $(wildcard lib/go/so/*.go)
+go_files_exe := $(wildcard lib/go/exe/*.go)
 
 all: build_go
 
