@@ -66,13 +66,6 @@ release_bin_windows:
   script:
     - scp ~/build/windows-x64/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/windows/amd64/gocrypt-cmd
 
-release_docs:
-  only: 
-    - master@engineering/gocrypt
-  stage: deploy
-  script:
-    - cp -r ~/doc/gocrypt /var/www/gocryptdoc
-
 release:
   only:
     - master@engineering/gocrypt
@@ -80,3 +73,10 @@ release:
   script:
     - cp -r lib/go dist/go
     - npx semantic-release
+
+release_docs:
+  only: 
+    - master@engineering/gocrypt
+  stage: deploy
+  script:
+    - mv ~/doc/gocrypt/* /var/www/gocryptdoc
