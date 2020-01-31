@@ -4,6 +4,7 @@ stages:
   - deploy
 
 before_script:
+  - yarn install --ignore-scripts
   - tsc -p ./lib/tsconfig.json
 
 go_test:
