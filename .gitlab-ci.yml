@@ -49,24 +49,24 @@ release_bin_linux:
     - master@engineering/gocrypt
   stage: deploy
   script:
-    - scp build/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/linux/amd64/gocrypt-func.so
-    - scp build/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/linux/amd64/gocrypt-cmd
+    - scp ~/build/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/linux/amd64/gocrypt-func.so
+    - scp ~/build/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/linux/amd64/gocrypt-cmd
 
 release_bin_mac:
   only:
     - master@engineering/gocrypt
   stage: deploy
   script:
-    - scp build/mac-x64/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/darwin/amd64/gocrypt-func.so
-    - scp build/mac-x64/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/darwin/amd64/gocrypt-cmd
+    - scp ~/build/mac-x64/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/darwin/amd64/gocrypt-func.so
+    - scp ~/build/mac-x64/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/darwin/amd64/gocrypt-cmd
 
 release_bin_windows:
   only:
     - master@engineering/gocrypt
   stage: deploy
   script:
-    - scp build/windows-x64/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/windows/amd64/gocrypt-func.so
-    - scp build/windows-x64/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/windows/amd64/gocrypt-cmd
+    - scp ~/build/windows-x64/func.so gitlab-runner@cloud.libraryofcode.org:/var/binary/windows/amd64/gocrypt-func.so
+    - scp ~/build/windows-x64/cmd gitlab-runner@cloud.libraryofcode.org:/var/binary/windows/amd64/gocrypt-cmd
 
 release_docs:
   only: 
