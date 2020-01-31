@@ -40,7 +40,8 @@ build_go_mac_x64:
 	@file ~/build/mac-x64/cmd
 
 build_doc:
-	npx typedoc --out doc lib --tsconfig lib/tsconfig.json --excludePrivate --name "GoCrypt" --hideGenerator --includeVersion
+	@-rm -r /var/www/gocryptdoc/*
+	npx typedoc --out ~/doc/gocrypt lib --tsconfig lib/tsconfig.json --excludePrivate --name "GoCrypt" --hideGenerator --includeVersion
 
 remove:
 	-rm -rf dist/build

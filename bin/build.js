@@ -1,15 +1,20 @@
+/* eslint-disable no-console */
 const axios = require('axios');
 const fs = require('fs');
 const os = require('os');
 
 const mode = 0o750;
 async function dwl(type) {
-  const so = await axios.default({
-    method: 'get',
-    url: `https://bin.libraryofcode.org/${type}/amd64/gocrypt-func.so`,
-    responseType: 'arraybuffer',
-  });
-  fs.writeFileSync(`${__dirname}../dist/build/func.so`, so.data, { mode });
+  try {
+    const so = await axios.default({
+      method: 'get',
+      url: `https://bin.libraryofcode.org/${type}/amd64/gocrypt-func.so`,
+      responseType: 'arraybuffer',
+    });
+    fs.writeFileSync(`${__dirname}../dist/build/func.so`, so.data, { mode });
+  } catch (error) {
+    console.log('Could not fetch DLL/SO bindings, some functions that require these may not work.');
+  }
 
   const exe = await axios.default({
     method: 'get',
