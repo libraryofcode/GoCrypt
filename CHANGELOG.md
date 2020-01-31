@@ -1,3 +1,10 @@
+## [1.3.2](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.1...v1.3.2) (2020-01-31)
+
+
+### Bug Fixes
+
+* Fixes for README typos and CI ([f9af9bb](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/f9af9bbd1d48be68e2952039600a4bca4d0f9632))
+
 ## [1.3.1](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.0...v1.3.1) (2020-01-31)
 
 
