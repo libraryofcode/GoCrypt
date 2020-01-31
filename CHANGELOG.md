@@ -1,3 +1,14 @@
+## [1.3.4](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.3...v1.3.4) (2020-01-31)
+
+
+### Bug Fixes
+
+* ci & build script ([7828afd](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/7828afd5fdbf6170bf51a430b0074111882bde1d))
+* Fixes an issue with the build script, not creating build dir ([f613e63](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/f613e6337498e2a9bfa5d9a43b8328e75ab5e6f7))
+* Fixes an issue with the build script, not creating build dir ([617163d](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/617163dee42c8e8f77d0128f844ac799bb62e430))
+* Fixes for README typos and CI ([2ed0c24](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/2ed0c24a1b795532605abfb391e2480353c71dd9))
+* fixes issue with build script ([39a6183](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/39a61833f3576f9d5da11eec800af88f4fa3ab94))
+
 ## [1.3.3](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.2...v1.3.3) (2020-01-31)
 
 
