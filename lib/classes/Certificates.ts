@@ -32,9 +32,8 @@ export interface CertificateRequestData {
 }
 
 /**
- * **INTERNAL** Constructor is not meant to be called externally.
+ * This class extends Map, and has functions relating to creation and information relating to x509 Certificates & CSRs.
  * @class
- * @classdesc This class extends Map, and has functions relating to creation and information relating to x509 Certificates & CSRs.
  */
 export default class Certificates extends Map<string, Certificate> {
   /**
@@ -43,6 +42,9 @@ export default class Certificates extends Map<string, Certificate> {
    */
   public csrs: Map<string, CSR>;
 
+  /**
+   * @internal
+   */
   constructor() {
     super();
     this.csrs = new Map();

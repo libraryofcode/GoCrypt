@@ -1,10 +1,9 @@
 import ffi from 'ffi-napi';
 
 /**
- * **INTERNAL** Constructor is not meant to be called externally.
+ * A general utilities library.
  * *Includes Shared Object/Library Functions [GO]*
  * @class
- * @classdesc A general Utilities library.
  */
 export default class Util {
   protected goLib: {
@@ -12,6 +11,9 @@ export default class Util {
     FreeString(pointer: any): void,
   };
 
+  /**
+   * @internal
+   */
   constructor() {
     this.goLib = ffi.Library(`${__dirname}/../build/func.so`, {
       RandomInt: ['char *', ['int']],

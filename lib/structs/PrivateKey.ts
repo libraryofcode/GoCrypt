@@ -40,6 +40,7 @@ export default class PrivateKey {
    * @param keyObject The key object from private key creation.
    * @param keyID The ID for this private key.
    * @param data Information relating to this private key.
+   * @internal
    */
   constructor(keyObject: crypto.KeyObject, keyID: string, data: { modulusLength: number, divisorLength: number, curve: string }) {
     this.keyObject = keyObject;

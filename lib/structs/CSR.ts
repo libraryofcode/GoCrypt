@@ -1,6 +1,9 @@
 import { PrivateKey } from '.';
 import { CertificateRequestData } from '../classes';
 
+/**
+ * Instance of a generated CSR, which are generated via {@link Certificates#createCertificateSigningRequest}
+ */
 export default class CSR {
   /**
    * The auto generated CSR ID, used for `.get()`ing the CSR from the Certificate#csrs map.
@@ -25,6 +28,7 @@ export default class CSR {
    * @param privateKey The Private Key instance used to create this CSR.
    * @param data The CertificateRequestData interface object used to create this CSR.
    * @param cpem The PEM encoded CSR.
+   * @internal
    */
   constructor(id: string, privateKey: PrivateKey, data: CertificateRequestData, cpem: string) {
     this.id = id;

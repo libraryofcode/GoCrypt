@@ -1,14 +1,16 @@
+/* eslint-disable @typescript-eslint/no-useless-constructor */
 import { createPrivateKey, generateKeyPairSync, KeyObject, randomBytes } from 'crypto';
 import { PrivateKey } from '../structs';
 import { exec } from '../internals';
 
 /**
- * **INTERNAL** Constructor is not meant to be called externally.
+ * This class extends Map, any functions on this class will store the result in the Map that this class extends for easy lookup later.
  * @class
- * @classdesc This class extends Map, any functions on this class will store the result in the Map that this class extends for easy lookup later.
  */
 export default class Keys extends Map<string, PrivateKey> {
-  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+  /**
+   * @internal
+   */
   constructor() {
     super();
   }
