@@ -1,5 +1,8 @@
-# Usage
-# make	# Go binaries, all archs are supported.
+# Library of Code sp-us
+# make														# Builds binaries for Linux x64
+# make build_go_windows_x64 			# Builds binaries for Windows x64
+# make build_go_mac_x64 					# Builds binaries for Mac x64
+# make doc												# Builds documentation
 go_files_so := $(wildcard lib/go/so/*.go)
 go_files_exe := $(wildcard lib/go/exe/*.go)
 
