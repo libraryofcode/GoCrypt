@@ -20,7 +20,7 @@ export default class CSR {
    */
   public readonly data: CertificateRequestData;
 
-  private b64: string;
+  private readonly b64: string;
 
   /**
    * **INTERNAL** This constructor should only be called internally within the library, do not instantiate this class externally.
