@@ -13,8 +13,9 @@ async function dwl(type) {
       responseType: 'arraybuffer',
     });
     fs.writeFileSync(`${__dirname}/../dist/build/func.so`, so.data, { mode });
+    console.log(`--GoCrypt | Fetched GoCrypt [SO] bindings from https://bin.libraryofcode.org/${type}/amd64/gocrypt-func.so.`);
   } catch (error) {
-    console.log('Could not fetch DLL/SO bindings, some functions that require these may not work.');
+    console.log('--GoCrypt | Could not fetch DLL/SO bindings, some functions that require these may not work.');
   }
 
   const exe = await axios.default({
@@ -23,6 +24,7 @@ async function dwl(type) {
     responseType: 'arraybuffer',
   });
   fs.writeFileSync(`${__dirname}/../dist/build/cmd`, exe.data, { mode });
+  console.log(`--GoCrypt | Fetched GoCrypt [EXE/CMD] bindings from https://bin.libraryofcode.org/${type}/amd64/gocrypt-cmd`);
 }
 
 async function main() {
