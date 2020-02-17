@@ -2,6 +2,7 @@ stages:
   - test
   - build
   - deploy
+  - docs
 
 before_script:
   - yarn install --ignore-scripts
@@ -77,6 +78,6 @@ release:
 release_docs:
   only: 
     - master@engineering/gocrypt
-  stage: deploy
+  stage: docs
   script:
     - mv ~/doc/gocrypt/* /var/www/gocryptdoc
