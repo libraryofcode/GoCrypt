@@ -31,6 +31,7 @@ export default class Util {
    * @example Util.randomInt(500);
    */
   public randomInt(max: number) {
+    if (platform() !== 'linux') throw new Error('This function is only available on Linux machines.');
     if (typeof max !== 'number') {
       throw new TypeError(`Expected type 'number' for parameter value, received type of '${typeof max}'`);
     }
