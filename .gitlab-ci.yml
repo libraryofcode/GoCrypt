@@ -2,6 +2,7 @@ stages:
   - test
   - build
   - deploy
+  - docs
 
 before_script:
   - yarn install --ignore-scripts
@@ -37,13 +38,6 @@ build_mac:
   script:
     - make build_go_mac_x64
 
-build_docs:
-  only:
-    - master@engineering/gocrypt
-  stage: build
-  script:
-    - make build_doc
-
 release_bin_linux:
   only:
     - master@engineering/gocrypt
@@ -74,9 +68,16 @@ release:
     - cp -r lib/go dist/go
     - npx semantic-release
 
+build_docs:
+  only:
+    - master@engineering/gocrypt
+  stage: docs
+  script:
+    - make build_doc
+
 release_docs:
   only: 
     - master@engineering/gocrypt
-  stage: deploy
+  stage: docs
   script:
     - mv ~/doc/gocrypt/* /var/www/gocryptdoc
