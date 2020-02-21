@@ -1,3 +1,10 @@
+## [1.3.5](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.4...v1.3.5) (2020-02-17)
+
+
+### Bug Fixes
+
+* **classes/Util.ts:** randomInt() should check for Linux platform ([5ba62c8](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/5ba62c87b84809baefdc0a56498323ea1a0deab2))
+
 ## [1.3.4](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.3...v1.3.4) (2020-01-31)
 
 
