@@ -1,7 +1,7 @@
 # GoCrypt
 *by Library of Code sp-us | Faculty Marshals*
 
-[![pipeline status](https://gitlab.libraryofcode.org/engineering/gocrypt/badges/master/pipeline.svg)](https://gitlab.libraryofcode.org/engineering/gocrypt/commits/master) [![coverage report](https://gitlab.libraryofcode.org/engineering/gocrypt/badges/master/coverage.svg)](https://gitlab.libraryofcode.org/engineering/gocrypt/commits/master)
+[![pipeline status](https://gitlab.libraryofcode.org/engineering/gocrypt/badges/master/pipeline.svg)](https://gitlab.libraryofcode.org/engineering/gocrypt/commits/master) 
 
 `yarn add gocrypt` || `npm install gocrypt`
 
@@ -38,8 +38,6 @@ You can contact Library of Code through the methods listed below, if you have an
 This module includes TypeScript declaration files.
 
 
-[Repository](https://gitlab.libraryofcode.org/engineering/gocrypt) 
-[NPM](https://npmjs.com/package/gocrypt) 
-[Support](https://support.libraryofcode.org) 
+[Repository](https://gitlab.libraryofcode.org/engineering/gocrypt) | [NPM](https://npmjs.com/package/gocrypt) | [Support](https://support.libraryofcode.org) 
 
 **Library of Code sp-us, Faculty Marshals** <marshals@staff.libraryofcode.org>
