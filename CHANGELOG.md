@@ -1,3 +1,15 @@
+# [1.4.0](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.5...v1.4.0) (2020-02-24)
+
+
+### Bug Fixes
+
+* **go/exe/main.go:** remove random print statement on errors ([02ee713](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/02ee7131174507485afd6ce547a3d66cab9b7303))
+
+
+### Features
+
+* **structs/Certificate.ts:** public declarations for subject/issuer in cert structc ([f7c3e74](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/f7c3e7452d94cc1f6a47465544e778d9a8be2132))
+
 ## [1.3.5](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.4...v1.3.5) (2020-02-17)
 
 
