@@ -9,7 +9,6 @@ import (
 
 // HandleErrorFMT Handles an error.
 func HandleErrorFMT(err error, message string) {
-	fmt.Println("hi!")
 	type output struct {
 		Err     string
 		Message string
