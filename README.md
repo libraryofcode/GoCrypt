@@ -32,7 +32,7 @@ const gocrypt = require('gocrypt').default;
 You can view documentation [here](https://gocrypt.libraryofcode.org).
 
 ## Support Resources
-You can contact Library of Code through the methods listed below, if you have an issue with the repository, feel free to join the Discord server to ask for help or open an issue on our [repository](https://gitlab.libraryofcode.org/engineering/gocrypt).
+You can contact Library of Code through the methods listed below, if you have an issue with the repository, feel free to join the Discord server to ask for help or open an issue on our [repository](https://github.com/LibraryofCode/GoCrypt).
 - [Discord Server](https://discord.gg/F4ztpQh)
 - [Support Desk](https://support.libraryofcode.org/)
 - *our contact email address is at the bottom of this file*
@@ -40,6 +40,6 @@ You can contact Library of Code through the methods listed below, if you have an
 This module includes TypeScript declaration files.
 
 
-[Repository](https://gitlab.libraryofcode.org/engineering/gocrypt) | [NPM](https://npmjs.com/package/gocrypt) | [Support](https://support.libraryofcode.org) 
+[Repository](https://github.com/LibraryofCode/GoCrypt) | [NPM](https://npmjs.com/package/gocrypt) | [Support](https://support.libraryofcode.org) 
 
 **Library of Code sp-us, Faculty Marshals** <marshals@staff.libraryofcode.org>
