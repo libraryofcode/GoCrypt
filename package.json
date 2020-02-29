@@ -41,7 +41,7 @@
     "branches": [
       "master"
     ],
-    "repositoryUrl": "git@gitlab.libraryofcode.org:engineering/gocrypt.git",
+    "repositoryUrl": "git@github.com:LibraryofCode/GoCrypt.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
