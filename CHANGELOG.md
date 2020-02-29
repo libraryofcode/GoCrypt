@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.4.0...v1.5.0) (2020-02-29)
+
+
+### Features
+
+* **lib/go/exe/util.go:** Add random integer generation for Windows & Mac w/o shared libraries ([cafd8d6](https://github.com/LibraryofCode/GoCrypt/commit/cafd8d668aa19ec21e56546b48d058f9c032226c))
+
 # [1.4.0](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.5...v1.4.0) (2020-02-24)
 
 
