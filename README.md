@@ -28,6 +28,8 @@ GoCrypt is using ES6, and TypeScript is gonna spit out some whack stuff when it 
 const gocrypt = require('gocrypt').default;
 ```
 
+## Documentation
+You can view documentation [here](https://gocrypt.libraryofcode.org).
 
 ## Support Resources
 You can contact Library of Code through the methods listed below, if you have an issue with the repository, feel free to join the Discord server to ask for help or open an issue on our [repository](https://gitlab.libraryofcode.org/engineering/gocrypt).
