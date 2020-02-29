@@ -1,3 +1,63 @@
+# [1.4.0](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.5...v1.4.0) (2020-02-24)
+
+
+### Bug Fixes
+
+* **go/exe/main.go:** remove random print statement on errors ([02ee713](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/02ee7131174507485afd6ce547a3d66cab9b7303))
+
+
+### Features
+
+* **structs/Certificate.ts:** public declarations for subject/issuer in cert structc ([f7c3e74](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/f7c3e7452d94cc1f6a47465544e778d9a8be2132))
+
+## [1.3.5](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.4...v1.3.5) (2020-02-17)
+
+
+### Bug Fixes
+
+* **classes/Util.ts:** randomInt() should check for Linux platform ([5ba62c8](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/5ba62c87b84809baefdc0a56498323ea1a0deab2))
+
+## [1.3.4](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.3...v1.3.4) (2020-01-31)
+
+
+### Bug Fixes
+
+* ci & build script ([7828afd](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/7828afd5fdbf6170bf51a430b0074111882bde1d))
+* Fixes an issue with the build script, not creating build dir ([f613e63](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/f613e6337498e2a9bfa5d9a43b8328e75ab5e6f7))
+* Fixes an issue with the build script, not creating build dir ([617163d](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/617163dee42c8e8f77d0128f844ac799bb62e430))
+* Fixes for README typos and CI ([2ed0c24](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/2ed0c24a1b795532605abfb391e2480353c71dd9))
+* fixes issue with build script ([39a6183](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/39a61833f3576f9d5da11eec800af88f4fa3ab94))
+
+## [1.3.3](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.2...v1.3.3) (2020-01-31)
+
+
+### Bug Fixes
+
+* fixes issue with build script ([64c6f6c](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/64c6f6cda622ec8f347ba9e9f18139702293cd62))
+
+## [1.3.2](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.1...v1.3.2) (2020-01-31)
+
+
+### Bug Fixes
+
+* Fixes for README typos and CI ([f9af9bb](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/f9af9bbd1d48be68e2952039600a4bca4d0f9632))
+
+## [1.3.1](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.3.0...v1.3.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* ci & build script ([57c526c](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/57c526c4dc4e0768ecb0cfcd74853bfdcf9da9f8))
+
+# [1.3.0](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.2.6...v1.3.0) (2020-01-31)
+
+
+### Features
+
+* Build script ([c81f3c5](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/c81f3c5f51490339c5b417d928a39d6e3ee04f1a))
+* Windows & Mac x64 support ([e2c5c80](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/e2c5c80c46f17d03ac7a800fa529547ac7fcabd5))
+* **x509:** Add support for creation of Certificate Signing Requests ([49e5d62](https://gitlab.libraryofcode.org/engineering/gocrypt/commit/49e5d629728b649103b1ab067cc0bd27f2831a3d))
+
 ## [1.2.6](https://gitlab.libraryofcode.org/engineering/gocrypt/compare/v1.2.5...v1.2.6) (2020-01-27)
 
 
