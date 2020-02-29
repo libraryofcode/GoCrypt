@@ -8,12 +8,12 @@
     "prepublishOnly": "make remove && make rm_push && make pre_push && tsc -p ./lib/tsconfig.json",
     "postinstall": "make install"
   },
-  "repository": "https://gitlab.libraryofcode.org/engineering/gocrypt",
+  "repository": "https://github.com/LibraryofCode/GoCrypt",
   "author": "Library of Code sp-us | Faculty Marshals",
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://gitlab.libraryofcode.org/engineering/gocrypt/issues",
+    "url": "https://github.com/LibraryofCode/GoCrypt/issues",
     "email": "marshals@libraryofcode.org"
   },
   "keywords": [
