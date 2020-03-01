@@ -16,7 +16,7 @@ test:
 	go test ${go_files_exe}
 
 local_build: 
-		# SO
+	# SO
 	@-mkdir ~/build
 	go test ${go_files_so}
 	go build -v -o dist/build/func.so -ldflags="-s -w" -buildmode=c-shared ${go_files_so}
@@ -29,12 +29,12 @@ local_build:
 	@file dist/build/cmd
 
 build_go:
-	# SO
-	@-mkdir ~/build
-	go test ${go_files_so}
-	go build -v -o ~/build/func.so -ldflags="-s -w" -buildmode=c-shared ${go_files_so}
-	@chmod u+x ~/build/func.so
-	@file ~/build/func.so
+	# SO | No longer built 
+	#@-mkdir ~/build
+	#go test ${go_files_so}
+	#go build -v -o ~/build/func.so -ldflags="-s -w" -buildmode=c-shared ${go_files_so}
+	#@chmod u+x ~/build/func.so
+	#@file ~/build/func.so
 	# EXE
 	go test ${go_files_exe}
 	go build -v -o ~/build/cmd -ldflags="-s -w" ${go_files_exe}
