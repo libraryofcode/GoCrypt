@@ -1,47 +1,26 @@
-import ffi from 'ffi-napi';
-import { platform } from 'os';
+/* eslint-disable no-empty-function */
+/* eslint-disable @typescript-eslint/no-useless-constructor */
+import { exec } from '../internals';
 
 /**
  * A general utilities library.
- * *Includes Shared Object/Library Functions [GO]*
  * @class
  */
 export default class Util {
-  protected goLib: {
-    RandomInt(max: number): { readCString(): string; },
-    FreeString(pointer: any): void,
-  };
-
   /**
    * @internal
    */
   constructor() {
-    if (platform() === 'linux') {
-      this.goLib = ffi.Library(`${__dirname}/../build/func.so`, {
-        RandomInt: ['char *', ['int']],
-        FreeString: ['void', ['void *']],
-      });
-    }
   }
 
   /**
-   * This function produces a random integer value
-   * [Shared Object Function (Go)]
+   * This function produces a cryptographically secure random integer value.
    * @param max Value provided should be >= -2147483648 and <= 2147483647
    * @example Util.randomInt(500);
    */
-  public randomInt(max: number) {
-    if (platform() !== 'linux') throw new Error('This function is only available on Linux machines.');
-    if (typeof max !== 'number') {
-      throw new TypeError(`Expected type 'number' for parameter value, received type of '${typeof max}'`);
-    }
-    const goResponse = this.goLib.RandomInt(max);
-    const str = goResponse.readCString();
-    const response: { Num: number, Err: string } = JSON.parse(str);
-    this.goLib.FreeString(goResponse);
-    if (response.Err) {
-      throw new Error(response.Err);
-    }
-    return response.Num;
+  public randomInt(max: number): number {
+    if (max <= -2147483648 || max >= 2147483647) throw new RangeError('Value provided should be >= -2147483648 and <= 2147483647.');
+    const result: { Message: number } = exec('randint', [max]);
+    return result.Message;
   }
 }
