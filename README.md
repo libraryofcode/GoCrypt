@@ -16,7 +16,7 @@ GoCrypt's mission is to offer all the crypto-related functions and APIs any Node
 ## Installation Requirements
 
 - Node 10+ is heavily recommended for installation. 
-- AMD_x64 CPU architecture.~
+- AMD_x64 CPU architecture.
 - ~~Go 1.13+ is required for installation. (https://golang.org/doc/install)~~
 - ~~Makefile is required for installation, (i.e. the make command that's only available on Linux, which is why this module is preferred to be used for Linux only).~~
 - **GoCrypt now supports Windows and Mac operating systems! AMD_x64 CPU architecture is the only architecture supported at the moment.**
