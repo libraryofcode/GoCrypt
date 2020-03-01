@@ -35,7 +35,8 @@
   ],
   "os": [
     "darwin",
-    "linux"
+    "linux",
+    "windows"
   ],
   "release": {
     "branches": [
