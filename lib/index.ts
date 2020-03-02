@@ -37,9 +37,9 @@ function checkRequirements(): { osCheck: boolean, goCheck: boolean } {
  * @private
  * @internal
  */
-const check = checkRequirements();
-if (!check.osCheck) throw new Error('GoCrypt is only supported on Linux operating systems at this time.');
-if (!check.goCheck) throw new Error('GoCrypt requires the Go programming language to be installed and available in path.');
+// const check = checkRequirements();
+// if (!check.osCheck) throw new Error('GoCrypt is only supported on Linux operating systems at this time.');
+// if (!check.goCheck) throw new Error('GoCrypt requires the Go programming language to be installed and available in path.');
 
 export default {
   keys: new classes.Keys(),
