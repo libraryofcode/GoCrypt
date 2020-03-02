@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.5.0...v1.6.0) (2020-03-02)
+
+
+### Bug Fixes
+
+* **lib/index.ts:** Remove OS/Go installation checks in module load ([1f038f1](https://github.com/LibraryofCode/GoCrypt/commit/1f038f1c0de2cc31d938aa285cfeb7beae0ab15e))
+
+
+### Features
+
+* **lib/classes/Util.ts:** Random number generator function, no longer uses SO-based functions; now available on win/mac ([4182500](https://github.com/LibraryofCode/GoCrypt/commit/4182500cba85d94b55a0e243066226688416869b))
+
 # [1.5.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.4.0...v1.5.0) (2020-02-29)
 
 
