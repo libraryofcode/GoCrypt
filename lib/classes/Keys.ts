@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-useless-constructor */
 import { createPrivateKey, generateKeyPairSync, KeyObject, randomBytes } from 'crypto';
-import { PrivateKey } from '../structs';
+import { Collection, PrivateKey } from '../structs';
 import { exec } from '../internals';
 
 /**
  * This class extends Map, any functions on this class will store the result in the Map that this class extends for easy lookup later.
  * @class
  */
-export default class Keys extends Map<string, PrivateKey> {
+export default class Keys extends Collection<PrivateKey> {
   /**
    * @internal
    */
