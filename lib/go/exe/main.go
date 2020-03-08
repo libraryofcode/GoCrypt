@@ -34,6 +34,8 @@ func main() {
 		CSR()
 	} else if os.Args[1] == "randint" {
 		RandomInt()
+	} else if os.Args[1] == "certinfo" {
+		CertificateInfo()
 	} else {
 		HandleErrorFMT(errors.New("invalid command or command not found"), "[GO] Invalid command or command not found.")
 	}
