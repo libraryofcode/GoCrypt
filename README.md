@@ -1,8 +1,6 @@
 # GoCrypt
 *by Library of Code sp-us | Faculty Marshals*
 
-[![pipeline status](https://gitlab.libraryofcode.org/engineering/gocrypt/badges/master/pipeline.svg)](https://gitlab.libraryofcode.org/engineering/gocrypt/commits/master) 
-
 `yarn add gocrypt` || `npm install gocrypt`
 
 **This module fetches bindings and executables from the Library of Code sp-us [distribution center](https://bin.libraryofcode.org) upon installation. The script will automatically determine your operating system and install related bindings.**
