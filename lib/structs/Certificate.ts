@@ -138,31 +138,42 @@ export default class Certificate {
    * @internal
    */
   constructor(certificateData: CertificateData, pem: string, id: string) {
+    this.id = id;
     this.b64 = Buffer.from(pem).toString('base64');
-    this.authorityInformationAccess.issuingCertificateURL = certificateData.AuthorityInformationAccess.IssuingCertificateURL;
-    this.authorityInformationAccess.ocspServer = certificateData.AuthorityInformationAccess.OCSPServer;
-    this.expirationDates.notBefore = certificateData.NotBefore;
-    this.expirationDates.notAfter = certificateData.NotAfter;
+    this.authorityInformationAccess = {
+      issuingCertificateURL: certificateData.AuthorityInformationAccess?.IssuingCertificateURL,
+      ocspServer: certificateData.AuthorityInformationAccess?.OCSPServer,
+    };
+    this.expirationDates = {
+      notBefore: certificateData.NotBefore,
+      notAfter: certificateData.NotAfter,
+    };
     this.extendedKeyUsage = certificateData.ExtendedKeyUsage;
     this.isCA = certificateData.IsCA;
-    this.issuer.commonName = certificateData.Issuer.CommonName;
-    this.issuer.country = certificateData.Issuer.Country;
-    this.issuer.organization = certificateData.Issuer.Organization;
-    this.issuer.organizationalUnit = certificateData.Issuer.OrganizationalUnit;
-    this.issuer.postalCode = certificateData.Issuer.PostalCode;
-    this.issuer.streetAddress = certificateData.Issuer.PostalCode;
-    this.subject.commonName = certificateData.Subject.CommonName;
-    this.subject.country = certificateData.Subject.Country;
-    this.subject.organization = certificateData.Subject.Organization;
-    this.subject.organizationalUnit = certificateData.Subject.OrganizationalUnit;
-    this.subject.postalCode = certificateData.Subject.PostalCode;
-    this.subject.streetAddress = certificateData.Subject.PostalCode;
+    this.issuer = {
+      commonName: certificateData.Issuer?.CommonName,
+      country: certificateData.Issuer?.Country,
+      organization: certificateData.Issuer?.Organization,
+      organizationalUnit: certificateData.Issuer?.OrganizationalUnit,
+      postalCode: certificateData.Issuer?.PostalCode,
+      streetAddress: certificateData.Issuer?.StreetAddress,
+    };
+    this.subject = {
+      commonName: certificateData.Subject?.CommonName,
+      country: certificateData.Subject?.Country,
+      organization: certificateData.Subject?.Organization,
+      organizationalUnit: certificateData.Subject?.OrganizationalUnit,
+      postalCode: certificateData.Subject?.PostalCode,
+      streetAddress: certificateData.Subject?.StreetAddress,
+    };
     this.keyUsage = certificateData.KeyUsage;
     this.publicKeyAlgorithm = certificateData.PublicKeyAlgorithm;
-    this.san.dnsNames = certificateData.San.DNSNames;
-    this.san.emailAddresses = certificateData.San.EmailAddresses;
-    this.san.ipAddresses = certificateData.San.IPAddresses;
-    this.san.uri = certificateData.San.URIs;
+    this.san = {
+      dnsNames: certificateData.San?.DNSNames,
+      emailAddresses: certificateData.San?.EmailAddresses,
+      ipAddresses: certificateData.San?.IPAddresses,
+      uri: certificateData.San?.URIs,
+    };
     this.serialNumber = certificateData.SerialNumber;
     this.signatureAlgorithm = certificateData.SignatureAlgorithm;
     this.version = certificateData.Version;
