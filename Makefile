@@ -59,7 +59,7 @@ build_go_mac_x64:
 
 build_doc:
 	@-rm -r /var/www/gocryptdoc/*
-	@git pull
+	@bash /opt/gocryptmirror.sh
 	npx typedoc --out ~/doc/gocrypt lib --tsconfig lib/tsconfig.json --excludePrivate --name "GoCrypt" --hideGenerator --includeVersion
 
 remove:
