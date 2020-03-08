@@ -80,4 +80,5 @@ release_docs:
     - master@engineering/GoCrypt-CI
   stage: docs
   script:
+    - git pull
     - mv ~/doc/gocrypt/* /var/www/gocryptdoc
