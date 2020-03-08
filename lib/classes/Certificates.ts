@@ -96,7 +96,7 @@ export default class Certificates extends Collection<Certificate> {
    * @param certificate The PEM encoded certificate to import.
    */
   public importCertificate(certificate: string): Certificate {
-    const certificateInfo: CertificateData = exec('certinfo', undefined, Buffer.from(JSON.stringify(certificate)).toString('hex'));
+    const certificateInfo: CertificateData = exec('certinfo', undefined, Buffer.from(certificate).toString('hex'));
     const id = randomBytes(5).toString('hex');
     const newCert = new Certificate(certificateInfo, certificate, id);
     this.set(id, newCert);
