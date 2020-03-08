@@ -42,6 +42,6 @@ export default class CSR {
    * @example CSR.export().toString(); // -----BEGIN CERTIFICATE REQ...
    */
   public export() {
-    return Buffer.from(this.b64);
+    return Buffer.from(this.b64, 'base64');
   }
 }
