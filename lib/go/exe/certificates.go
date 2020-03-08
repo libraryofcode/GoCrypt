@@ -42,7 +42,7 @@ func CertificateInfo() {
 	}
 	block, _ := pem.Decode(bytes)
 	if block == nil {
-		HandleErrorFMT(errors.New("runtime error: invalid memory address or nil pointer dereference"), "[GO] Invalid private key provided.")
+		HandleErrorFMT(errors.New("runtime error: invalid memory address or nil pointer dereference"), "[GO] Invalid certificate provided.")
 	}
 	var certificateInfo Certificate
 	if block.Type == "CERTIFICATE" {

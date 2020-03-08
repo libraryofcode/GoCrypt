@@ -27,9 +27,12 @@ func CSR() {
 	var csr CertificateSigningRequestData
 	fmt.Scanln(&data)
 	bytes, err := hex.DecodeString(data)
-	json.Unmarshal(bytes, &csr)
 	if err != nil {
 		HandleErrorFMT(err, "[GO] Could not decode hexadecimal argument to string.")
+	}
+	err = json.Unmarshal(bytes, &csr)
+	if err != nil {
+		HandleErrorFMT(err, "[GO] Could not unmarshal input data.")
 	}
 	block, _ := pem.Decode([]byte(csr.Key))
 	var decKey interface{}
