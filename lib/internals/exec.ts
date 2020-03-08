@@ -13,6 +13,7 @@ class GoExecError extends Error {
   constructor(err: string, message: string) {
     super(err);
 
+    Error.captureStackTrace(this, this.constructor);
     this.name = this.constructor.name;
     this.goErr = err;
     this.goMsg = message;
