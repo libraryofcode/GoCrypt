@@ -1,5 +1,5 @@
 import { randomBytes } from 'crypto';
-import { Certificate, CSR, PrivateKey } from '../structs';
+import { Certificate, CertificateData, Collection, CSR, PrivateKey } from '../structs';
 import { exec } from '../internals';
 
 export interface CertificateRequestData {
@@ -55,19 +55,19 @@ export interface CertificateRequestData {
  * This class extends Map, and has functions relating to creation and information relating to x509 Certificates & CSRs.
  * @class
  */
-export default class Certificates extends Map<string, Certificate> {
+export default class Certificates extends Collection<Certificate> {
   /**
    * A map keyed by a 5 byte hexadecimal string, containing all the CSRs created during this instance.
    * @example Certificates.csrs.get('id');
    */
-  public csrs: Map<string, CSR>;
+  public csrs: Collection<CSR>;
 
   /**
    * @internal
    */
   constructor() {
     super();
-    this.csrs = new Map();
+    this.csrs = new Collection();
   }
 
   /**
@@ -89,5 +89,17 @@ export default class Certificates extends Map<string, Certificate> {
     const newCSR = new CSR(id, privateKey, data, Req);
     this.csrs.set(id, newCSR);
     return newCSR;
+  }
+
+  /**
+   * This function imports a PEM encoded certificate into the system, and returns an instance of said Certificate.
+   * @param certificate The PEM encoded certificate to import.
+   */
+  public importCertificate(certificate: string): Certificate {
+    const certificateInfo: CertificateData = exec('certinfo', undefined, Buffer.from(JSON.stringify(certificate)).toString('hex'));
+    const id = randomBytes(5).toString('hex');
+    const newCert = new Certificate(certificateInfo, certificate, id);
+    this.set(id, newCert);
+    return newCert;
   }
 }
