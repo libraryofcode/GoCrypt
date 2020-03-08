@@ -6,7 +6,7 @@ import { CertificateRequestData } from '../classes';
  */
 export default class CSR {
   /**
-   * The auto generated CSR ID, used for `.get()`ing the CSR from the Certificate#csrs map.
+   * The auto generated CSR ID, used for `.get()`ing the CSR from the Certificate#csrs collection.
    */
   public readonly id: string;
 

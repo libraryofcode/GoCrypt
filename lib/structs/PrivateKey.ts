@@ -2,7 +2,7 @@ import crypto from 'crypto';
 
 export default class PrivateKey {
   /**
-   * The ID for this key, you can fetch this PrivateKey instance again either with the Keys.store map.
+   * The ID for this key, you can fetch this PrivateKey instance again either with the Keys.store collection.
    */
   public readonly id: string;
 
