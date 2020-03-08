@@ -1,3 +1,23 @@
+# [1.7.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.6.0...v1.7.0) (2020-03-08)
+
+
+### Bug Fixes
+
+* **lib/classes/Certificates.ts:** Fix issue with Go binding exec for importCertificate(); ([ffa3e70](https://github.com/LibraryofCode/GoCrypt/commit/ffa3e7072581a563443d8b410d824fc197289c85))
+* **lib/go/exec/*:** Fix error handling issues in Go bindings ([913235f](https://github.com/LibraryofCode/GoCrypt/commit/913235f8703cdc39d18835c14b5ddbba20c47989))
+* **lib/index.ts:** Remove redudant functions ([be5c261](https://github.com/LibraryofCode/GoCrypt/commit/be5c2617693fc3350c963a149f5c525f14e5bd4b))
+* **lib/structs/Certificate.ts:** Fix issue with null properties, general cleanup of constructor ([3f48767](https://github.com/LibraryofCode/GoCrypt/commit/3f4876705bdbe4ff99c424f041112a227cc8bd51))
+* **lib/structs/CSR.ts:** Fix issue with faulty CSR export ([d251289](https://github.com/LibraryofCode/GoCrypt/commit/d251289b5d3d50f5e782f9d0d00bc298432c5330))
+
+
+### Features
+
+* **lib/classes/Certificate.ts:** Add Certificate importing function ([da8d942](https://github.com/LibraryofCode/GoCrypt/commit/da8d94203dabb8ff7b67fa2f09441db332559433))
+* **lib/structs/Certificate.ts:** certificate struct ([966c8be](https://github.com/LibraryofCode/GoCrypt/commit/966c8be489cabce4470fe61ff2c7b7d5808799ab))
+* **lib/structs/Certificate.ts:** certificate struct ([c846f84](https://github.com/LibraryofCode/GoCrypt/commit/c846f84d2a60bcdecb906acccc3692913798d194))
+* **lib/structs/Certificate.ts:** export func for certificates ([2ae1266](https://github.com/LibraryofCode/GoCrypt/commit/2ae1266ac86348fc771350454effc0e54a553ee7))
+* **lib/structs/Collection.ts:** Implement a Collection struct, replace Map inheritance in Keys.ts and Certificates.ts ([a841d5b](https://github.com/LibraryofCode/GoCrypt/commit/a841d5b37373a6cfb864a0373571f49d6b2c59ed))
+
 # [1.6.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.5.0...v1.6.0) (2020-03-02)
 
 
