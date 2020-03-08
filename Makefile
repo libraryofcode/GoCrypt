@@ -28,6 +28,8 @@ local_build:
 	@chmod u+x dist/build/cmd
 	@file dist/build/cmd
 
+	tsc -p ./lib/tsconfig.json
+
 build_go:
 	# SO | No longer built 
 	#@-mkdir ~/build
