@@ -178,4 +178,12 @@ export default class Certificate {
     this.signatureAlgorithm = certificateData.SignatureAlgorithm;
     this.version = certificateData.Version;
   }
+
+  /**
+   * Returns a Buffer of the PEM encoded certificate.
+   * @example Certificate.export().toString(); // -----BEGIN CERTIFICATE...
+   */
+  public export() {
+    return Buffer.from(this.b64, 'base64');
+  }
 }
