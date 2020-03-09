@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"crypto/x509"
 	"encoding/hex"
 	"encoding/json"
 	"encoding/pem"
 	"errors"
-	"crypto/x509"
+	"fmt"
 	"time"
 )
 
@@ -15,23 +15,23 @@ func CertificateInfo() {
 	type Certificate struct {
 		Subject struct {
 			Country, Organization, OrganizationalUnit, StreetAddress, PostalCode []string
-			CommonName string
+			CommonName                                                           string
 		}
 		San struct {
 			DNSNames, EmailAddresses, IPAddresses, URIs []string
 		}
 		Issuer struct {
 			Country, Organization, OrganizationalUnit, StreetAddress, PostalCode []string
-			CommonName string
+			CommonName                                                           string
 		}
 		AuthorityInformationAccess struct {
 			OCSPServer, IssuingCertificateURL []string
 		}
-		IsCA bool
-		KeyUsage, ExtendedKeyUsage []string
+		IsCA                                                 bool
+		KeyUsage, ExtendedKeyUsage                           []string
 		SerialNumber, PublicKeyAlgorithm, SignatureAlgorithm string
-		Version int
-		NotBefore, NotAfter time.Time
+		Version                                              int
+		NotBefore, NotAfter                                  time.Time
 	}
 
 	var encodedCertificate string
@@ -118,31 +118,31 @@ func CertificateInfo() {
 // CheckCertificateKeyUsages This function returns a slice of strings cooresponding to a x509.KeyUsage bitmap
 func CheckCertificateKeyUsages(keyUsage int) []string {
 	var val []string
-	if keyUsage & int(x509.KeyUsageDigitalSignature) != 0 {
+	if keyUsage&int(x509.KeyUsageDigitalSignature) != 0 {
 		val = append(val, "DigitalSignature")
 	}
-	if keyUsage & int(x509.KeyUsageContentCommitment) != 0 {
+	if keyUsage&int(x509.KeyUsageContentCommitment) != 0 {
 		val = append(val, "ContentCommitment")
 	}
-	if keyUsage & int(x509.KeyUsageKeyEncipherment) != 0 {
+	if keyUsage&int(x509.KeyUsageKeyEncipherment) != 0 {
 		val = append(val, "KeyEncipherment")
 	}
-	if keyUsage & int(x509.KeyUsageDataEncipherment) != 0 {
+	if keyUsage&int(x509.KeyUsageDataEncipherment) != 0 {
 		val = append(val, "DataEncipherment")
 	}
-	if keyUsage & int(x509.KeyUsageKeyAgreement) != 0 {
+	if keyUsage&int(x509.KeyUsageKeyAgreement) != 0 {
 		val = append(val, "KeyAgreement")
 	}
-	if keyUsage & int(x509.KeyUsageCertSign) != 0 {
+	if keyUsage&int(x509.KeyUsageCertSign) != 0 {
 		val = append(val, "CertSign")
 	}
-	if keyUsage & int(x509.KeyUsageCRLSign) != 0 {
+	if keyUsage&int(x509.KeyUsageCRLSign) != 0 {
 		val = append(val, "CRLSign")
 	}
-	if keyUsage & int(x509.KeyUsageEncipherOnly) != 0 {
+	if keyUsage&int(x509.KeyUsageEncipherOnly) != 0 {
 		val = append(val, "EncipherOnly")
 	}
-	if keyUsage & int(x509.KeyUsageDecipherOnly) != 0 {
+	if keyUsage&int(x509.KeyUsageDecipherOnly) != 0 {
 		val = append(val, "DecipherOnly")
 	}
 	return val
