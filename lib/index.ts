@@ -4,4 +4,5 @@ export default {
   keys: new classes.Keys(),
   certificates: new classes.Certificates(),
   util: new classes.Util(),
+  hash: classes.Hash,
 };

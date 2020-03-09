@@ -36,6 +36,10 @@ func main() {
 		RandomInt()
 	} else if os.Args[1] == "certinfo" {
 		CertificateInfo()
+	} else if os.Args[1] == "hashsha256" {
+		CreateSHA256Hash()
+	} else if os.Args[1] == "hashsha512" {
+		CreateSHA512Hash()
 	} else {
 		HandleErrorFMT(errors.New("invalid command or command not found"), "[GO] Invalid command or command not found.")
 	}

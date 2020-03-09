@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"crypto/rand"
-	"math/big"
-	"strconv"
 	"encoding/json"
 	"errors"
+	"fmt"
+	"math/big"
+	"os"
+	"strconv"
 )
 
 // RandomInt Command handler for generating a random integer.
@@ -23,7 +23,7 @@ func RandomInt() {
 	if err != nil {
 		HandleErrorFMT(err, "[GO] Could generate integer.")
 	}
-	output := struct{
+	output := struct {
 		Message int64
 	}{
 		Message: random.Int64(),
