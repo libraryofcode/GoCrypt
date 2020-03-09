@@ -13,11 +13,9 @@ GoCrypt's mission is to offer all the crypto-related functions and APIs any Node
 
 ## Installation Requirements
 
-- Node 12+ is heavily recommended for installation. 
+- Node 12+ is required for stable usage.
 - AMD_x64 CPU architecture.
-- ~~Go 1.13+ is required for installation. (https://golang.org/doc/install)~~
-- ~~Makefile is required for installation, (i.e. the make command that's only available on Linux, which is why this module is preferred to be used for Linux only).~~
-- **GoCrypt now supports Windows and Mac operating systems! AMD_x64 CPU architecture is the only architecture supported at the moment.**
+- Windows, Mac, or Linux operating systems.
 
 ## Gotcha(s)
 
@@ -28,6 +26,9 @@ const gocrypt = require('gocrypt').default;
 
 ## Documentation
 You can view documentation [here](https://gocrypt.libraryofcode.org).
+
+## Change Log
+You can view the Change Log [here](https://github.com/LibraryofCode/GoCrypt/blob/master/CHANGELOG.md).
 
 ## Support Resources
 You can contact Library of Code through the methods listed below, if you have an issue with the repository, feel free to join the Discord server to ask for help or open an issue on our [repository](https://github.com/LibraryofCode/GoCrypt).
