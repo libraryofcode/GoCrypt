@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.7.0...v1.8.0) (2020-03-09)
+
+
+### Features
+
+* **lib/classes/Hash.ts:** Add hash [static] class, used for making SHA256/SHA512 checksums ([3c754f3](https://github.com/LibraryofCode/GoCrypt/commit/3c754f3cf99ef53d481e5d4c6e370ff79886708d))
+
 # [1.7.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.6.0...v1.7.0) (2020-03-08)
 
 
