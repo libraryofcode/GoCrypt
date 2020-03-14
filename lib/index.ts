@@ -5,9 +5,12 @@ class GoCrypt {
   public stores: {
     certificates: stores.Certificates,
     keys: stores.Keys,
+  };
+
+  public static: {
     util: typeof stores.Util,
     hash: typeof stores.Hash,
-  };
+  }
 
   public CSR: typeof structs.CSR;
 
@@ -19,6 +22,8 @@ class GoCrypt {
     this.stores = {
       certificates: new stores.Certificates(),
       keys: new stores.Keys(),
+    };
+    this.static = {
       util: stores.Util,
       hash: stores.Hash,
     };
