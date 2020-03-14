@@ -9,11 +9,9 @@ GoCrypt is a package written in TypeScript for advanced crytography functions an
 native Node.js crypto functions & via Go bindings.
 GoCrypt's mission is to offer all the crypto-related functions and APIs any Node.js developer will need, we understand the difficulty of being able to do x509-related stuff natively. There's really no good libraries out there for making certificates or CSRs for example *(@ every "x509" library out there that just spawns openssl)*, we want to change that.
 
-***WARNING:*** **This module is __not__ stable at the moment, the version will be bumped to v2.0.0 when it is stable for use.**
-
 ## Installation Requirements
 
-- Node 12+ is required for stable usage.
+- Node 12.4.0 or higher is required for stable usage.
 - AMD_x64 CPU architecture.
 - Windows, Mac, or Linux operating systems.
 
