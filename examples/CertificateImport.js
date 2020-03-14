@@ -2,7 +2,8 @@
 const gocrypt = require('../dist/index').default;
 
 // Here we import a basic certificate
-const cert = gocrypt.certificates.importCertificate(`-----BEGIN CERTIFICATE-----
+let cert = new gocrypt.Certificate();
+cert = cert.import(`-----BEGIN CERTIFICATE-----
 MIIFmzCCBIOgAwIBAgIMJc6u12evwQlSfkRPMA0GCSqGSIb3DQEBCwUAMFAxCzAJ
 BgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMSYwJAYDVQQDEx1H
 bG9iYWxTaWduIFJTQSBEViBTU0wgQ0EgMjAxODAeFw0xOTEwMTQxOTI1NDlaFw0y
