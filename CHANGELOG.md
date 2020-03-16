@@ -1,3 +1,11 @@
+## [1.8.1](https://github.com/LibraryofCode/GoCrypt/compare/v1.8.0...v1.8.1) (2020-03-16)
+
+
+### Bug Fixes
+
+* Rename classes dir ([ec7fe55](https://github.com/LibraryofCode/GoCrypt/commit/ec7fe5520b9a3c823c5cd5a6eb2bceace9f93edf))
+* **lib/tsconfig.json:** JSDoc not showing up in IDEs due to TS removing comments, this fixes that issue. ([35a4525](https://github.com/LibraryofCode/GoCrypt/commit/35a4525d48d691aa72e8df2e703409b1b59e3560))
+
 # [1.8.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.7.0...v1.8.0) (2020-03-09)
 
 
