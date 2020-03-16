@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.8.1...v2.0.0) (2020-03-16)
+
+
+### Code Refactoring
+
+* Complete refactor of all library code, move from a procedural approach to an object-oriented approach. ([8383a37](https://github.com/LibraryofCode/GoCrypt/commit/8383a37cf424c1e1a56402d052bae6a3f6c56a1c))
+
+
+### BREAKING CHANGES
+
+* Complete refactor of all library code, move from a procedural approach to an object-oriented approach.
+View https://gocrypt.libraryofcode.org/ for documentation, existing code will have to be rewritten.
+
 ## [1.8.1](https://github.com/LibraryofCode/GoCrypt/compare/v1.8.0...v1.8.1) (2020-03-16)
 
 
