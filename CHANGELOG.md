@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/LibraryofCode/GoCrypt/compare/v2.0.0...v2.0.1) (2020-03-17)
+
+
+### Bug Fixes
+
+* **package.json:** Fixes installation issue, axios was accidentally removed in a previous release ([6522e05](https://github.com/LibraryofCode/GoCrypt/commit/6522e05cd55ebea4efaedfcc62f45f9d9b387b87))
+
 # [2.0.0](https://github.com/LibraryofCode/GoCrypt/compare/v1.8.1...v2.0.0) (2020-03-16)
 
 
